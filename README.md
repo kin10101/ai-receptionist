@@ -112,3 +112,40 @@ Key themes:
 - enterprise workflow automation
 - human-in-the-loop escalation
 - real-world business integration patterns
+
+## Scaffolded Application Structure
+
+```text
+app/
+  api/routes/receptionist.py      # HTTP endpoints
+  core/graph.py                   # LangGraph workflow and node routing
+  core/state.py                   # Shared workflow state model
+  services/scheduler.py           # Scheduling service abstraction
+  tools/google_calendar.py        # Google Calendar integration adapter scaffold
+  tools/gmail.py                  # Gmail integration adapter scaffold
+  handoff/escalation.py           # Human handoff detection and summary
+  main.py                         # FastAPI app entrypoint
+tests/
+  test_health.py
+  test_chat.py
+```
+
+## Local Development
+
+Install dependencies:
+
+```bash
+pip install -e .[dev]
+```
+
+Run the API:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Run tests:
+
+```bash
+pytest
+```

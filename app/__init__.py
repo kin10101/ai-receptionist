@@ -1,0 +1,1 @@
+"""AI receptionist application package."""
